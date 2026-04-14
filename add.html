@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="add.css">
+    <title>FishFlow</title>
+</head>
+
+<body>
+    <script src="script.js"></script>
+    <header class="main-header">
+        <div class="logo">
+            <img src="https://i.postimg.cc/BZ7hThhf/Logo.png" alt="Logo FishFlow">
+            <h1><span class="fish">Fish</span><span class="flow">Flow</span></h1>
+        </div>
+
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="main.html">Início</a></li>
+                <li><a href="add.html">Cadastro</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="main-form">
+            <form class="form">
+
+                <div class="form-title">
+                    <h2>Cadastro</h2>
+                </div>
+
+                <div class="info-groups">
+                    
+                    <div class="input-box">
+                        <label for="nome">Nome da Espécie:</label>
+                        <input type="text" id="nome" placeholder="Ex: Peixe Palhaço">
+                    </div>
+
+                    <div class="input-box">
+                        <label for="habitat">Habitat:</label>
+                        <select id="habitat">
+                            <option value="Agua Doce">Água Doce</option>
+                            <option value="Agua Salgada">Água Salgada</option>
+                        </select>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="foto">Foto da Espécie:</label>
+                        <input type="file" id="foto">
+                    </div>
+
+                    <button type="submit" class="btn-submit">Finalizar Cadastro</button>
+                </div>
+            </form>
+        </section>
+
+        
+        <div id="lista-peixes" class="container-cards">
+        </div>
+        
+    </main>
+</body>
+</html>

@@ -1,44 +1,154 @@
+@import url('https://fonts.cdnfonts.com/css/lemon-milk');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --primary-blue: #4C70E6;
+    --light-blue: #95B6E3;
+    --light-gray: #E6E6E6;
+    --border-color: #e0e0e0;
+    --text-dark: #333;
+}
+
 * {
     padding: 0;
     margin: 0;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing: border-box;
 }
 
 body {
-    background-color: rgb(222, 237, 241);
+    font-family: "Montserrat", sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: var(--text-dark);
 }
 
-.Container {
-    padding: 20px 5%;
+/* Header */
+.main-header {
+    padding: 1rem 5%;
+    background-color: var(--light-blue);
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
-    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.Menu ul {
+.logo {
     display: flex;
-    gap: 30px;
-}
-
-.Coluna1 {
-    padding: 30px;
-    margin: 30px;
-    display: flex;
-    justify-content: space-evenly;
     align-items: center;
+    gap: 10px;
+    font-family: 'Lemon Milk', sans-serif;
+}
+
+.logo img { 
+    width: 60px; 
+    height: auto; 
+
+}
+.fish { 
+    color: var(--primary-blue); 
+}
+
+.flow { 
+    color: var(--light-gray); 
+}
+
+.nav-menu ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav-menu a:hover { opacity: 0.8; }
+
+/* Video Section */
+.hero-video {
+    padding: 2rem 5%;
+    display: flex;
+    justify-content: center;
+}
+
+.video-container {
+    width: 100%;
+    max-width: 800px;
+    aspect-ratio: 16 / 9; /* Mantém a proporção do vídeo */
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+}
+
+/* Fish Card */
+.section-title {
+    padding: 2rem 5% 1rem;
+    font-family: 'Lemon Milk', sans-serif;
+}
+
+.fish-card {
+    margin: 2rem 5%;
+    padding: 2rem;
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Divide imagem e texto */
+    gap: 2rem;
+    align-items: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.fish-visual img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.fish-visual h3 {
+    font-family: 'Lemon Milk', sans-serif;
+    color: var(--primary-blue);
     text-align: center;
 }
 
-.card01 {
-    border-style: groove;
-    border: 2px solid #3498db; /* Espessura, estilo e cor */
-    border-radius: 12px;        /* Bordas arredondadas */
-    padding: 15px;              /* Espaço entre a borda e o conteúdo */
-    max-width: 500px;           /* Limita a largura do card */
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+.fish-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
 }
 
-.Info01 {
-    text-align: left;
+.info-group h4 {
+    margin-bottom: 0.8rem;
+    border-bottom: 2px solid var(--light-blue);
+    display: inline-block;
+}
+
+/* Responsividade (Mobile) */
+@media (max-width: 768px) {
+    .fish-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .fish-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .main-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+.main-footer {
+  text-align: center;
+  background-color: #f3efef
 }

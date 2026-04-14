@@ -1,0 +1,120 @@
+@import url('https://fonts.cdnfonts.com/css/lemon-milk');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --primary-blue: #4C70E6;
+    --light-blue: #95B6E3;
+    --light-gray: #E6E6E6;
+    --border-color: #e0e0e0;
+    --text-dark: #333;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: var(--text-dark);
+}
+
+/* Header */
+.main-header {
+    padding: 1rem 5%;
+    background-color: var(--light-blue);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Lemon Milk', sans-serif;
+}
+
+.logo img { 
+    width: 60px; 
+    height: auto; 
+
+}
+.fish { 
+    color: var(--primary-blue); 
+}
+
+.flow { 
+    color: var(--light-gray); 
+}
+
+.nav-menu ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav-menu a:hover { opacity: 0.8; }
+
+.main-form {
+    margin: 3rem;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.form-title h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    font-family: "Lemon MILK", sans-serif;
+}
+
+/* Espaçamento entre os campos */
+.input-box {
+    margin-bottom: 15px;
+}
+
+/* Labels e inputs ocupando a largura total */
+.input-box label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+.input-box input, 
+.input-box select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Garante que o padding não quebre a largura */
+}
+
+/* Botão simples e direto */
+.btn-submit {
+    width: 100%;
+    padding: 10px;
+    background: #6495ED;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-submit:hover {
+    background: #4a7fd1;
+}
