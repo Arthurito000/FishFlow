@@ -162,4 +162,5 @@ body {
     outline: none;
     border-color: var(--primary-blue);
     box-shadow: 0 0 5px rgba(76, 112, 230, 0.3);
+    font-family: "Montserrat", sans-serif;
 }
