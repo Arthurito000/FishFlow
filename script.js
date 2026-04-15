@@ -1,6 +1,12 @@
 const formulario = document.querySelector('.form');
 const listaPeixes = document.getElementById('lista-peixes');
 
+function salvarNoLocalStorage(peixe) {
+    let peixes = JSON.parse(localStorage.getItem('meusPeixes') || '[]');
+    peixes.push(peixe);
+    localStorage.setItem('meusPeixes', JSON.stringify(peixes));
+}
+
 formulario.addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -19,7 +25,7 @@ formulario.addEventListener('submit', function(event) {
 
     };
 
-
+salvarNoLocalStorage(novoPeixe);
 
     // Estrutura IDÊNTICA ao index.html
     const cardHTML = `
