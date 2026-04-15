@@ -1,29 +1,40 @@
+// 1. Seleciona o formulário e a área onde os peixes vão aparecer
 const formulario = document.querySelector('.form');
-const container = document.getElementById('container-cards');
+const listaPeixes = document.getElementById('lista-peixes');
 
+// 2. Escuta o evento de "submit" (clique no botão)
 formulario.addEventListener('submit', function(event) {
-    event.preventDefault(); // Impede a página de recarregar
+    
+    // ISSO É O MAIS IMPORTANTE: Impede a página de recarregar
+    event.preventDefault();
 
-    // 1. Captura os valores dos inputs
+    // 3. Pega os valores dos inputs
     const nome = document.getElementById('nome').value;
     const habitat = document.getElementById('habitat').value;
-    const foto = document.getElementById('foto').files[0];
+    const link = document.getElementById('link').value;
 
-    // 2. Cria o elemento do Card
-    const novoCard = document.createElement('article');
-    novoCard.classList.add('card');
-
-    // 3. Monta o conteúdo do Card (Template String)
-    novoCard.innerHTML = `
-        <img src="${URL.createObjectURL(foto)}" alt="${nome}">
-        <h3>${nome}</h3>
-        <p>Habitat: ${habitat}</p>
-        <span>Status: Cadastrado</span>
+    // 4. Cria a estrutura do Card (HTML dinâmico)
+    const cardHTML = `
+        <div class="card-peixe-container">
+            <div class="card-content">
+                <div class="card-image-box">
+                    <img src="${link}" alt="${nome}">
+                    <h3 class="card-name-title">${nome}</h3>
+                </div>
+                <div class="card-info-grid">
+                    <div class="info-column">
+                        <h4>Habitat</h4>
+                        <p>${habitat}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     `;
 
-    // 4. Adiciona o card na tela
-    container.appendChild(novoCard);
+    // 5. Adiciona o novo card dentro da div "lista-peixes"
+    // Usamos 'insertAdjacentHTML' para ele aparecer no início da lista
+    listaPeixes.insertAdjacentHTML('afterbegin', cardHTML);
 
-    // Limpa o formulário
+    // 6. Limpa o formulário para o próximo cadastro
     formulario.reset();
 });
