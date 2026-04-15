@@ -8,7 +8,6 @@
 </head>
 
 <body>
-    <script src="script.js"></script>
     <header class="main-header">
         <div class="logo">
             <img src="https://i.postimg.cc/BZ7hThhf/Logo.png" alt="Logo FishFlow">
@@ -25,30 +24,62 @@
 
     <main>
         <section class="main-form">
-                        <form class="form" id="fishForm">
+            <form class="form" id="fishForm">
                 <div class="form-title">
                     <h2>Cadastro de Espécie</h2>
                 </div>
-
+        
                 <div class="info-groups">
                     <div class="input-box">
                         <label for="nome">Nome da Espécie:</label>
-                        <input type="text" id="nome" placeholder="Ex: Peixe Palhaço" required>
+                        <input type="text" id="nome" placeholder="Ex: Tambaqui" required>
+                    </div>
+                    
+                    <div class="input-box">
+                        <label for="cientifico">Nome Científico:</label>
+                        <input type="text" id="cientifico" placeholder="Ex: Colossoma macropomum" required>
+                    </div>
+        
+                    <div class="input-box">
+                        <label for="nutricao">Nutrição:</label>
+                        <input type="text" id="nutricao" placeholder="Ex: Frutos, Algas"required>
+                    </div>
+        
+                    <div class="input-box">
+                        <label for="habitat">Habitat:</label>
+                        <input type="text" id="habitat" placeholder="Ex: Águas claras"required>
                     </div>
 
                     <div class="input-box">
-                        <label for="habitat">Habitat:</label>
-                        <select id="habitat">
-                            <option value="Água Doce">Água Doce</option>
-                            <option value="Água Salgada">Água Salgada</option>
-                        </select>
+                        <label for="vida">Idade Média</label>
+                        <input type="text" id="vida" placeholder="Ex: 8-10 anos"required>
+                    </div>
+        
+                    <div class="input-box">
+                        <label for="comprimento">Comprimento Médio:</label>
+                        <input type="text" id="comprimento" placeholder="Ex: 40-60cm"required>
+                    </div>
+        
+                    <div class="input-box">
+                        <label for="peso">Peso Médio:</label>
+                        <input type="text" id="peso" placeholder="Ex: 40-60kg"required>
                     </div>
 
+                    <div class="input-box">
+                        <label for="periodo">Periodo Ativo:</label>
+                        <input type="text" id="periodo" placeholder="Ex: Manhã"required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="atrair">Como atrair:</label>
+                        <input type="text" id="atrair" placeholder="Ex: Iscas"required>
+                    </div>
+        
                     <div class="input-box">
                         <label for="link">URL da foto:</label>
                         <input type="url" id="link" placeholder="https://..." required>
                     </div>
-
+        
                     <button type="submit" class="btn-submit">Cadastrar Peixe</button>
                 </div>
             </form>
@@ -59,5 +90,6 @@
         </div>
         
     </main>
+    <script src="script.js"></script>
 </body>
 </html>

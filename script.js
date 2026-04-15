@@ -1,40 +1,60 @@
-// 1. Seleciona o formulário e a área onde os peixes vão aparecer
 const formulario = document.querySelector('.form');
 const listaPeixes = document.getElementById('lista-peixes');
 
-// 2. Escuta o evento de "submit" (clique no botão)
+function salvarNoLocalStorage(peixe) {
+    let peixes = JSON.parse(localStorage.getItem('meusPeixes') || '[]');
+    peixes.push(peixe);
+    localStorage.setItem('meusPeixes', JSON.stringify(peixes));
+}
+
 formulario.addEventListener('submit', function(event) {
-    
-    // ISSO É O MAIS IMPORTANTE: Impede a página de recarregar
     event.preventDefault();
 
-    // 3. Pega os valores dos inputs
-    const nome = document.getElementById('nome').value;
-    const habitat = document.getElementById('habitat').value;
-    const link = document.getElementById('link').value;
+    // Captura de todos os campos
+    const novoPeixe = {
+        nome: document.getElementById('nome').value,
+        cientifico: document.getElementById('cientifico').value,
+        nutricao: document.getElementById('nutricao').value,
+        habitat: document.getElementById('habitat').value,
+        vida: document.getElementById('vida').value,
+        comprimento: document.getElementById('comprimento').value,
+        peso: document.getElementById('peso').value,
+        periodo: document.getElementById('periodo').value,
+        atrair: document.getElementById('atrair').value,
+        link: document.getElementById('link').value
 
-    // 4. Cria a estrutura do Card (HTML dinâmico)
+    };
+
+    salvarNoLocalStorage(novoPeixe);
+
+    // Estrutura IDÊNTICA ao index.html
     const cardHTML = `
-        <div class="card-peixe-container">
-            <div class="card-content">
-                <div class="card-image-box">
-                    <img src="${link}" alt="${nome}">
-                    <h3 class="card-name-title">${nome}</h3>
+        <article class="fish-card">
+            <div class="fish-visual">
+                <img src="${novoPeixe.link}" alt="${novoPeixe.nome}">
+                <h3>${novoPeixe.nome}</h3>
+            </div>
+
+            <div class="fish-info-grid">
+                <div class="info-group">
+                    <h4>Informações Básicas</h4>
+                    <p><strong>Nome Científico:</strong> ${novoPeixe.cientifico}</p>
+                    <p><strong>Nutrição:</strong> ${novoPeixe.nutricao}</p>
+                    <p><strong>Habitat:</strong> ${novoPeixe.habitat}</p>
+                    <p><strong>Idade Média:</strong> ${novoPeixe.vida}</p>
                 </div>
-                <div class="card-info-grid">
-                    <div class="info-column">
-                        <h4>Habitat</h4>
-                        <p>${habitat}</p>
-                    </div>
+
+                <div class="info-group">
+                    <h4>Dados de Pesca</h4>
+                    <p><strong>Comprimento:</strong> ${novoPeixe.comprimento}</p>
+                    <p><strong>Peso:</strong> ${novoPeixe.peso}</p>
+                    <p><strong>Periodo Ativo:</strong> ${novoPeixe.periodo}
+                    <p><strong>Como Atrair:</strong> ${novoPeixe.atrair}</p>
                 </div>
             </div>
-        </div>
+        </article>
     `;
 
-    // 5. Adiciona o novo card dentro da div "lista-peixes"
-    // Usamos 'insertAdjacentHTML' para ele aparecer no início da lista
     listaPeixes.insertAdjacentHTML('afterbegin', cardHTML);
-
-    // 6. Limpa o formulário para o próximo cadastro
     formulario.reset();
 });
